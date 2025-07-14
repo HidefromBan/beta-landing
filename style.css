@@ -332,7 +332,7 @@ h1 {
 
 @media (max-width: 1023px) {
   .hero.scroll-animate {
-    opacity: 1 !important;
+    opacity:  1 !important;
     transform: none !important;
     animation: none !important;
   }
@@ -360,7 +360,7 @@ h1 {
 
 .vision-mision {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -381,7 +381,6 @@ h1 {
 }
 
 .image-overlay-section {
-  margin-top: 3rem;
   border-left: 5px solid var(--color-primario);
   border-radius: 8px;
   background: var(--color-fondo);
@@ -480,29 +479,16 @@ h1 {
 /* TRABAJOS - GALERIA */
 
 /* === FADE-IN PARA GALERÍA === */
-gallery-item {
+.scroll-animate {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 0.8s ease-out forwards;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.gallery-item:nth-of-type(1) {
-  animation-delay: 0.2s;
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
-.gallery-item:nth-of-type(2) {
-  animation-delay: 0.4s;
-}
-.gallery-item:nth-of-type(3) {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .trabajos-section {
   padding: 5rem 2rem;
   background: var(--color-fondo);
@@ -823,14 +809,3 @@ form {
   background-color: #101a2c;
 }
 
-@media (hover: none), (max-width: 1023px) {
-  .animate,
-  .scroll-animate.animate,
-  .gallery-item,
-  .trabajo-item.animate {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}

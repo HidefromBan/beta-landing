@@ -115,16 +115,16 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // === SCROLL ANIMATION ===
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-    // Solo aplica la clase animate si NO es un elemento de galería
-    if (!entry.target.classList.contains('gallery-item')) {
-      entry.target.classList.toggle('animate', entry.isIntersecting);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+      observer.unobserve(entry.target); // animación 1 sola vez
     }
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+document.querySelectorAll('.scroll-animate, .gallery-item').forEach(el => observer.observe(el));
 });
 
 // === SCROLL RESTORE ===
@@ -155,4 +155,12 @@ function toggleTheme() {
   const current = root.getAttribute('data-theme') || 'light';
   const next = current === 'dark' ? 'light' : 'dark';
   setTheme(next);
+}
+
+const heroSection = document.getElementById('inicio');
+
+// Solo aplicar animación si el viewport es >= 1024px (escritorio)
+if (window.innerWidth >= 1024) {
+  heroSection.classList.add('scroll-animate');
+  observer.observe(heroSection);
 }
