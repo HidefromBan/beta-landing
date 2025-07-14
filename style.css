@@ -332,7 +332,7 @@ h1 {
 
 @media (max-width: 1023px) {
   .hero.scroll-animate {
-    opacity: 1 !important;
+    opacity:  1 !important;
     transform: none !important;
     animation: none !important;
   }
@@ -349,19 +349,24 @@ h1 {
 }
 
 .sobre-nosotros {
-  position: relative;
   background: url('./img/hero2.webp') center/cover no-repeat fixed;
-  z-index: 0;
-  overflow: hidden;
-  padding-block: 5rem 4rem;
-  transition: background 0.4s ease, color 0.4s ease;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.sobre-nosotros .container {
+  background-color: rgba(255, 255, 255, 0.85); /* o un fondo oscuro para dark mode */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 1100px;
+  margin: auto;
+}
 .vision-mision {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
@@ -381,12 +386,12 @@ h1 {
 }
 
 .image-overlay-section {
-  margin-top: 3rem;
-  border-left: 5px solid var(--color-primario);
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--color-primario);
   border-radius: 8px;
   background: var(--color-fondo);
   box-shadow: var(--sombra);
-  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .image-overlay-content {
@@ -405,6 +410,18 @@ h1 {
     flex-direction: column;
   }
 }
+@media (max-width: 1024px) {
+  .vision-mision {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sobre-nosotros {
+    background-attachment: scroll;
+  }
+}
+
 /* ========== SERVICIOS ========== */
 .servicios-grid {
   display: grid;
@@ -480,29 +497,16 @@ h1 {
 /* TRABAJOS - GALERIA */
 
 /* === FADE-IN PARA GALERÍA === */
-gallery-item {
+.scroll-animate {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 0.8s ease-out forwards;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.gallery-item:nth-of-type(1) {
-  animation-delay: 0.2s;
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
-.gallery-item:nth-of-type(2) {
-  animation-delay: 0.4s;
-}
-.gallery-item:nth-of-type(3) {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .trabajos-section {
   padding: 5rem 2rem;
   background: var(--color-fondo);
@@ -823,14 +827,3 @@ form {
   background-color: #101a2c;
 }
 
-@media (hover: none), (max-width: 1023px) {
-  .animate,
-  .scroll-animate.animate,
-  .gallery-item,
-  .trabajo-item.animate {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
