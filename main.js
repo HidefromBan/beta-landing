@@ -159,8 +159,3 @@ function toggleTheme() {
 
 const heroSection = document.getElementById('inicio');
 
-// Solo aplicar animación si el viewport es >= 1024px (escritorio)
-if (window.innerWidth >= 1024) {
-  heroSection.classList.add('scroll-animate');
-  observer.observe(heroSection);
-}
