@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESEC SpA | Soluciones Electromecánicas & Construcción</title>
+  <meta name="description" content="ESEC SpA – Servicios electromecánicos, construcción y mantención en la Región de Coquimbo." />
+  <meta name="author" content="ESEC SpA" />
+  <meta property="og:title" content="ESEC SpA" />
+  <meta property="og:description" content="Soluciones electromecánicas y construcción en Coquimbo." />
+  <meta property="og:image" content="https://tuweb.github.io/img/logo.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="./img/logo.webp" />
+  <link rel="preload" as="image" href="./img/hero-test.webp" as="image" type="image/webp" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- NAVBAR DESKTOP -->
+  <header class="navbar">
+    <div class="container flex-between">
+      <img src="./img/logo.webp" alt="Logo ESEC SpA" width="140" height="80" class="logo" />
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="navbar-actions">
+        <button id="darkModeToggle" class="dark-mode-btn desktop-only" aria-label="Cambiar modo">
+          <img src="./img/moon.webp" alt="Modo claro/oscuro" class="icon-mode" />
+        </button>
+        <button id="hamburger" class="hamburger" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- DRAWER NAV -->
+  <nav id="navDrawer" class="nav-drawer">
+ <button class="drawer-close" aria-label="Cerrar menú">
+    <img src="./svg/xmark-solid.svg" width="36" height="36" alt="Cerrar" />
+  </button>
+
+  <div class="drawer-logo-center">
+    <img src="./img/logo.webp" alt="Logo ESEC SpA"  class="logo-drawer" />
+  </div>
+    <ul class="drawer-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <div class="drawer-darkmode">
+          <button id="drawerDarkModeToggle" class="dark-mode-btn" aria-label="Modo oscuro">
+              <img src="./img/moon.webp" alt="Modo oscuro" class="icon-mode " />
+          </button>
+      </div>
+    </ul>
+    <div class="drawer-social">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/56974188951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero scroll-animate">
+    <div class="hero-overlay "></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Soluciones Electromecánicas & Construcción</h1>
+      <p class="hero-subtitle">Más de 10 años entregando confianza, seguridad y calidad.</p>
+      <a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="sobre-nosotros">
+  <div class="container">
+    <h2 class="section-title">Sobre Nosotros</h2>
+    <p><strong>ESEC SpA</strong>, ubicada en Coquimbo, entrega soluciones en mantención, construcción, electricidad y más desde 2014.</p>
+
+    <div class="vision-mision">
+      <div class="card ">
+        <h3>Misión</h3>
+        <p>Ofrecer servicios de alto valor, tecnologías de la información, mantenimiento preventivo y correctivo de aparatos mecánicos y eléctricos, obras civiles en el ámbito industrial, eléctrico y de construcción, entregando las mejores condiciones de Trabajo para nuestros colaboradores. </p>
+      </div>
+      <div class="card ">
+        <h3>Visión</h3>
+        <p>Brindar soluciones tecnológicas para la industria de supermercados y tiendas de retail, entregando un valor agregado e innovando a través de un buen equipo de trabajo.</p>
+      </div>
+    </div>
+
+    <div class="image-overlay-section">
+      <div class="image-overlay-content">
+        <h3>Comprometidos con la excelencia</h3>
+        <p>Somos una empresa enfocada en soluciones industriales eficientes y sostenibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <div id="serviciosSlider" class="servicios-grid">
+          <div class="servicio-card scroll-animate "><i class="fas fa-paint-roller"></i><span>Pintura y Soldadura TIC-MIC</span></div>
+          <div class="servicio-card scroll-animate  "><i class="fas fa-hammer"></i><span>Carpintería y Obras Civiles</span></div>
+          <div class="servicio-card scroll-animate  "><i class="fas fa-bolt"></i><span>Instalaciones Eléctricas</span></div>
+          <div class="servicio-card scroll-animate"><i class="fas fa-couch scroll"></i><span>Mueblería y Cerámicas</span></div>
+          <div class="servicio-card scroll-animate "><i class="fas fa-house-damage"></i><span>Reparación de Techumbre</span></div>
+          <div class="servicio-card scroll-animate "><i class="fas fa-wind"></i><span>Aire Acondicionado</span></div>
+          <div class="servicio-card scroll-animate "><i class="fas fa-video"></i><span>Cámaras de Seguridad</span></div>
+          <div class="servicio-card scroll-animate "><i class="fas fa-tree"></i><span>Áreas Verdes y Canaletas</span></div>
+        </div>
+        <button class="slider-btn next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+<!-- SECCION GALERIA DE PROYECTOS -->
+    <section id="proyectos" class="trabajos-section">
+        <h2 class="section-title">Trabajos</h2>
+
+        <div class="trabajo-item gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/IMG-20250702-WA0005.webp" alt="Proyecto 1" loading="lazy">
+            </div>
+            <div class="trabajo-text">
+            <h3>Para tu web, blog o aplicación</h3>
+            <p>Utiliza nuestras imágenes para páginas web, tiendas en línea o presentaciones digitales de alto impacto visual.</p>
+            </div>
+        </div>
+
+        <div class="trabajo-item reverse gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/pexels-victormoragriega-29177620.webp" alt="Proyecto 1" loading="lazy">
+            </div>
+            <div class="trabajo-text">
+            <h3>Para promocionar tus productos</h3>
+            <p>Fotos limpias y nítidas ideales para destacar productos en catálogos, banners o campañas publicitarias.</p>
+            </div>
+        </div>
+
+        <div class="trabajo-item gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/IMG-20250702-WA0037.webp" alt="Proyecto 1" loading="lazy"/>
+            </div>
+            <div class="trabajo-text">
+            <h3>Para imprimir en materiales</h3>
+            <p>Diseñamos imágenes aptas para impresión de alta resolución, manteniendo identidad visual y profesionalismo.</p>
+            </div>
+        </div>
+        <div class="trabajo-item reverse gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/unknown-senior-tile-installer-worker-600nw-2160015247.webp" alt="Proyecto 1" loading="lazy"/>
+            </div>
+            <div class="trabajo-text">
+            <h3>Para imprimir en materiales</h3>
+            <p>Diseñamos imágenes aptas para impresión de alta resolución, manteniendo identidad visual y profesionalismo.</p>
+            </div>
+        </div>
+        <div class="trabajo-item gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/pexels-watorious-2381463.webp" alt="Proyecto 1" loading="lazy"/>
+            </div>
+            <div class="trabajo-text">
+            <h3>Para imprimir en materiales</h3>
+            <p>Diseñamos imágenes aptas para impresión de alta resolución, manteniendo identidad visual y profesionalismo.</p>
+            </div>
+        </div>
+        <div class="trabajo-item reverse gallery-item">
+            <div class="trabajo-img">
+            <img src="./img/IMG-20250702-WA0017.webp" alt="Proyecto 1" loading="lazy"/>
+            </div>
+            <div class="trabajo-text">
+            <h3>Para imprimir en materiales</h3>
+            <p>Diseñamos imágenes aptas para impresión de alta resolución, manteniendo identidad visual y profesionalismo.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content">
+        <h2 class="cta-title">¿Necesitas un equipo confiable para tu próximo proyecto?</h2>
+        <a href="#contacto" class="btn btn-secondary">Conversemos</a>
+        </div>
+    </section>
+
+<!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="container contact-grid scroll-animate ">
+      <iframe title="Ubicación ESEC SpA" src="https://www.google.com/maps?q=Almirante%20Latorre%20243,%20Coquimbo,%20Chile&output=embed" loading="lazy"></iframe>
+      <form id="wsp-form scroll-animate" novalidate>
+        <h2 class="section-title-small">Contáctanos</h2>
+        <div class="form-group scroll-animate ">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required placeholder="Tu nombre" />
+        </div>
+        <div class="form-group scroll-animate ">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" required placeholder="ejemplo@dominio.com" />
+        </div>
+        <div class="form-group scroll-animate ">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" rows="4" required placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 scroll-animate">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+   <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+        <button id="btnScrollTop" class="btn-scroll-top" aria-label="Volver arriba">
+          ↑
+        </button>
+      <p>© 2025 ESEC SpA. Todos los derechos reservados.</p>
+      <p>
+        <a href="#" class="link-ghost">Política de Privacidad</a> |
+        <a href="#" class="link-ghost">Términos de Servicio</a>
+      </p>
+    </div>
+  </footer>
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <div class="btn-wsp-wrapper">
+    <div class="tooltip-wsp">¿Necesita una cotización? <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Escríbanos</div>
+    <a href="https://wa.me/56974188951" target="_blank" class="btn-wsp" aria-label="Contáctanos por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
