@@ -388,7 +388,7 @@ h1 {
 .vision-mision .card h3,
 .image-overlay-content h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .image-overlay-section {
@@ -628,13 +628,16 @@ h1 {
 }
 
 /* ========== CONTACTO ========== */
-
 .contact{
   background-color: var(--color-fondo);
   color: var(--color-texto);
   padding: 4rem 1rem;
 }
-
+@media (max-width: 320px) {
+  html {
+    width: 100%;
+  }
+}
 .contact-grid {
   display: grid;
   gap: 2.5rem;
