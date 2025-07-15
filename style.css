@@ -186,8 +186,11 @@ img {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
   height: 100vh;
+  max-height: 100dvh; /* para móviles modernos */
   background: var(--color-secundario);
   display: flex;
   flex-direction: column;
@@ -200,7 +203,7 @@ img {
 }
 /* Drawer abierto */
 .nav-drawer.open {
-  right: 0;
+  right: auto;
   opacity: 1;
   visibility: visible;
 }
