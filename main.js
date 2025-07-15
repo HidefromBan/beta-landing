@@ -1,8 +1,7 @@
-// === ELEMENTOS ===
+// === ELEMENTOS GLOBALES ===
 const root = document.documentElement;
 const savedTheme = localStorage.getItem('theme') || 'light';
 
-// Diferir hasta que DOM esté listo
 window.addEventListener('DOMContentLoaded', () => {
   // === TEMA INICIAL ===
   setTheme(savedTheme);
@@ -102,36 +101,37 @@ window.addEventListener('DOMContentLoaded', () => {
   slider?.addEventListener('scroll', updateSliderButtons);
   updateSliderButtons();
 
-  // === BOTÓN "VOLVER ARRIBA" ===
+  // === BOTÓN VOLVER ARRIBA ===
   const scrollTopBtn = document.getElementById('btnScrollTop');
 
   window.addEventListener('scroll', () => {
     const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-    scrollTopBtn.classList.toggle('visible', bottom);
+    scrollTopBtn?.classList.toggle('visible', bottom);
   });
 
   scrollTopBtn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // === SCROLL ANIMATION ===
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-      observer.unobserve(entry.target); // animación 1 sola vez
-    }
-  });
-}, { threshold: 0.15 });
+  // === ANIMACIONES AL SCROLL ===
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // animación solo una vez
+      }
+    });
+  }, { threshold: 0.15 });
 
-document.querySelectorAll('.scroll-animate, .gallery-item').forEach(el => observer.observe(el));
+  document.querySelectorAll('.scroll-animate, .gallery-item').forEach(el => {
+    observer.observe(el);
+  });
 });
 
-// === SCROLL RESTORE ===
+// === RESTAURAR SCROLL ARRIBA AL REFRESCAR ===
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-
 window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
@@ -143,6 +143,14 @@ function updateThemeIcons(theme) {
     img.src = `./img/${icon}`;
     img.alt = theme === 'dark' ? 'Modo claro' : 'Modo oscuro';
   });
+
+  // Cambiar logos al modo correspondiente
+  const logoSrc = theme === 'dark' ? './img/logo-negativo.webp' : './img/logo.webp';
+  const logoNavbar = document.getElementById('logoNavbar');
+  const logoDrawer = document.getElementById('logoDrawer');
+
+  if (logoNavbar) logoNavbar.src = logoSrc;
+  if (logoDrawer) logoDrawer.src = logoSrc;
 }
 
 function setTheme(theme) {
@@ -156,6 +164,3 @@ function toggleTheme() {
   const next = current === 'dark' ? 'light' : 'dark';
   setTheme(next);
 }
-
-const heroSection = document.getElementById('inicio');
-
