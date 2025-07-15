@@ -1,7 +1,7 @@
 /* ========== VARIABLES GLOBALES ========== */
 :root {
   --color-primario: #ff8c00;
-  --color-secundario: #113860;
+  --color-secundario: #1c5fa1f1;
   --color-fondo: #f9fafc;
   --color-texto: #172b4d;
   --color-blanco: #fff;
@@ -13,7 +13,7 @@
   --color-fondo: #121212;
   --color-texto: #e5e7eb;
   --color-blanco: #fff;
-  --color-secundario: #0c1b2d;
+  --color-secundario: #1a2733;
   --color-gris: #ccc;
   --sombra: 0 6px 20px rgba(255, 255, 255, 0.05);
   --sombra-hover: 0 10px 24px rgba(255, 255, 255, 0.1);
@@ -38,7 +38,6 @@ img {
   max-width: 100%;
   display: block;
 }
-
 
 /* SCROLL */
 
@@ -79,6 +78,7 @@ img {
   transform: translateY(-3px);
 }
 .btn-primary {
+  text-decoration: none;
   background: var(--color-primario);
   color: #fff;
 }
@@ -624,42 +624,146 @@ h1 {
 }
 
 /* ========== CONTACTO ========== */
+
+.contact{
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 4rem 1rem;
+}
+
 .contact-grid {
   display: grid;
   gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
 }
+
 .contact iframe {
   width: 100%;
   height: 100%;
-  min-height: 320px;
+  min-height: 360px;
   border-radius: 14px;
   border: 0;
-}
-form {
-  background: #fff;
-  border-radius: 14px;
-  padding: 2rem 1.8rem;
   box-shadow: var(--sombra);
-  transition: background 0.3s ease, color 0.3s ease;
 }
+
+form#form-contacto {
+  background-color: var(--color-blanco);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+}
+
+.section-title-small {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secundario);
+  margin-bottom: 1.5rem;
+}
+
 .form-group {
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
 }
+
 .form-group label {
-  margin-bottom: 0.4rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
 }
+
 .form-group input,
+.form-group select,
 .form-group textarea {
-  padding: 0.8rem 1rem;
-  border: 1px solid #d1d5db;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-gris);
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+}
+
+.form-group textarea{
+  resize:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn.w-100 {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-align: center;
   border-radius: 8px;
   font-size: 1rem;
-  resize: vertical;
-  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary.wsp{
+  background-color: transparent;
+  color: #25d366;
+  border: 2px solid #25d366;
+}
+
+.btn-primary.wsp:hover {
+  background-color: #25d366;
+  color: var(--color-blanco);
+}
+
+.btn-secondary.wsp{
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--color-secundario);
+  border: 2px solid var(--color-secundario);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .section-title-small {
+    text-align: center;
+  }
+
+  .form-buttons .btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
 }
 
 /* ========== DARK MODE BUTTON (SOLO EN MÓVILES) ========== */
@@ -690,7 +794,7 @@ form {
 }
 .btn-scroll-top {
   position: fixed;
-  bottom: 24px;
+  bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
   width: 52px;
@@ -817,13 +921,14 @@ form {
   border-color: #555;
 }
 
-[data-theme="dark"] .btn-primary {
-  background: #ffb347;
-  color: #000;
+[data-theme="dark"] .btn-primary.wsp{
+  background: #25d366;
+  color: #fff;
+  border: 2px solid #888;
 }
 
-[data-theme="dark"] .btn-secondary {
-  background: #444;
+[data-theme="dark"] .btn-secondary.wsp {
+  background:#3470ab;
   color: #fff;
   border: 2px solid #888;
 }
@@ -838,6 +943,56 @@ form {
 
 [data-theme="dark"] .footer {
   background-color: #101a2c;
+}
+
+
+
+
+[data-theme="dark"] .contact {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+[data-theme="dark"] form#form-contacto {
+  background-color: var(--color-secundario);
+  box-shadow: var(--sombra);
+}
+
+[data-theme="dark"] .form-group label {
+  color: var(--color-texto);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  background-color: var(--color-fondo);
+  border-color: var(--color-gris);
+  color: var(--color-blanco);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+  color: #aaa;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: #ffa726;
+  color: #000;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: #ff9800;
+  box-shadow: var(--sombra-hover);
+}
+
+[data-theme="dark"] .btn-secondary {
+  border-color: #ffa726;
+  color: #ffa726;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: #ffa726;
+  color: #000;
 }
 
 @media (max-width: 375px) {

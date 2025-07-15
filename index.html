@@ -206,22 +206,47 @@
   <section id="contacto" class="contact">
     <div class="container contact-grid scroll-animate ">
       <iframe title="Ubicación ESEC SpA" src="https://www.google.com/maps?q=Almirante%20Latorre%20243,%20Coquimbo,%20Chile&output=embed" loading="lazy"></iframe>
-      <form id="wsp-form scroll-animate" novalidate>
-        <h2 class="section-title-small">Contáctanos</h2>
-        <div class="form-group scroll-animate ">
+      
+        <!-- FORMULARIO DE CONTACTO  -->
+      <form id="form-contacto" class="scroll-animate" novalidate>
+        <h2 class="section-title-small">Solicita tu Presupuesto</h2>
+
+        <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" required placeholder="Tu nombre" />
+          <input type="text" id="nombre" required placeholder="Tu nombre completo" />
         </div>
-        <div class="form-group scroll-animate ">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" required placeholder="ejemplo@dominio.com" />
+
+        <div class="form-group">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" placeholder="+56 9 1234 5678" />
         </div>
-        <div class="form-group scroll-animate ">
+
+        <div class="form-group">
+          <label for="servicio">Tipo de Servicio</label>
+          <select id="servicio" required>
+            <option value="">Selecciona una opción</option>
+            <option>Pintura y Soldadura</option>
+            <option>Instalaciones Eléctricas</option>
+            <option>Carpintería / Obras Civiles</option>
+            <option>Techumbres y Reparaciones</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" rows="4" required placeholder="¿Cómo podemos ayudarte?"></textarea>
+          <textarea id="mensaje" rows="4" required placeholder="Cuéntanos en qué necesitas ayuda..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary w-100 scroll-animate">Enviar por WhatsApp</button>
-      </form>
+
+        <div class="form-buttons">
+            <button id="btnWhatsapp" type="button" class="btn btn-primary wsp w-100">
+                Enviar por WhatsApp
+            </button>
+            <a id="btnEmail" class="btn btn-secondary wsp w-100" href="#" target="_blank">
+              Enviar por Correo
+            </a>
+        </div>
+</form>
     </div>
   </section>
 
@@ -232,10 +257,6 @@
           ↑
         </button>
       <p>© 2025 ESEC SpA. Todos los derechos reservados.</p>
-      <p>
-        <a href="#" class="link-ghost">Política de Privacidad</a> |
-        <a href="#" class="link-ghost">Términos de Servicio</a>
-      </p>
     </div>
   </footer>
   <!-- BOTÓN WHATSAPP FLOTANTE -->

@@ -48,28 +48,63 @@ window.addEventListener('DOMContentLoaded', () => {
   themeDesktopBtn?.addEventListener('click', toggleTheme);
   themeMobileBtn?.addEventListener('click', toggleTheme);
 
-  // === FORMULARIO WHATSAPP ===
-  const form = document.getElementById('wsp-form');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    const nombre = form.querySelector('#nombre')?.value.trim();
-    const email = form.querySelector('#email')?.value.trim();
-    const mensaje = form.querySelector('#mensaje')?.value.trim();
+// === FORMULARIO WHATSAPP ===
+  // === ELEMENTOS DEL FORMULARIO ===
+const btnWhatsapp = document.getElementById("btnWhatsapp");
+const btnEmail = document.getElementById("btnEmail");
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!nombre || !email || !mensaje) {
-      alert('Por favor completa todos los campos.');
-      return;
-    }
-    if (!emailRegex.test(email)) {
-      alert('Por favor ingresa un correo válido.');
-      return;
-    }
+// === VALIDACIÓN Y FORMATO ===
+function obtenerDatosFormulario() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const servicio = document.getElementById("servicio").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
 
-    const text = `Hola, mi nombre es ${nombre}. Mi correo es ${email}. Quisiera cotizar: ${mensaje}`;
-    const url = `https://wa.me/56974188951?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
-  });
+  if (!nombre || !servicio || !mensaje) {
+    alert("Por favor completa todos los campos obligatorios (Nombre, Servicio y Mensaje).");
+    return null;
+  }
+
+  if (telefono && !/^\+?56\s?9\s?\d{4}\s?\d{4}$/.test(telefono)) {
+    alert("El número de teléfono ingresado no es válido. Usa el formato +56 9 1234 5678.");
+    return null;
+  }
+
+  return { nombre, telefono, servicio, mensaje };
+}
+
+// === ENVÍO POR WHATSAPP ===
+btnWhatsapp.addEventListener("click", () => {
+  const datos = obtenerDatosFormulario();
+  if (!datos) return;
+
+  const { nombre, telefono, servicio, mensaje } = datos;
+
+  const texto = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio},  ${mensaje}` +
+                (telefono ? ` Mi teléfono es: ${telefono}` : "");
+
+  const numero = "56974188951"; // número de WhatsApp sin "+"
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  window.open(url, "_blank");
+});
+
+// === ENVÍO POR CORREO ===
+btnEmail.addEventListener("click", (e) => {
+  const datos = obtenerDatosFormulario();
+  if (!datos) {
+    e.preventDefault(); // cancela el enlace si hay error
+    return;
+  }
+
+  const { nombre, telefono, servicio, mensaje } = datos;
+
+  const asunto = `Solicitud: ${servicio}`;
+  const cuerpo = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio}.\n\n${mensaje}` +
+                 (telefono ? `\n\nMi teléfono es: ${telefono}` : "");
+
+  const mailtoLink = `mailto:serviciosesecspa@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  btnEmail.href = mailtoLink;
+});
 
   // === SLIDER SERVICIOS ===
   const slider = document.getElementById('serviciosSlider');
