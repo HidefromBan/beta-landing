@@ -984,6 +984,14 @@ form#form-contacto {
   background-color: #ff9800;
   box-shadow: var(--sombra-hover);
 }
+[data-theme="dark"] .btn-primary.wsp:hover {
+  background-color: #25d366;
+  box-shadow: var(--sombra-hover);
+}
+[data-theme="dark"] .btn-secondary.wsp:hover {
+  background-color: #3470ab;
+  box-shadow: var(--sombra-hover);
+}
 
 [data-theme="dark"] .btn-secondary {
   border-color: #ffa726;
