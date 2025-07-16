@@ -633,11 +633,6 @@ h1 {
   color: var(--color-texto);
   padding: 4rem 1rem;
 }
-@media (max-width: 320px) {
-  html {
-    width: 100%;
-  }
-}
 .contact-grid {
   display: grid;
   gap: 2.5rem;
