@@ -628,16 +628,21 @@ h1 {
 }
 
 /* ========== CONTACTO ========== */
+/* ========== CONTACTO ========== */
+
 .contact{
   background-color: var(--color-fondo);
   color: var(--color-texto);
   padding: 4rem 1rem;
 }
+
 .contact-grid {
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   align-items: start;
+  justify-content: center; /* <-- ayuda a centrar */
+  max-width: 100%;
 }
 
 .contact iframe {
@@ -647,6 +652,10 @@ h1 {
   border-radius: 14px;
   border: 0;
   box-shadow: var(--sombra);
+}
+.contact iframe,
+form#form-contacto{
+   margin: 0;
 }
 
 form#form-contacto {
@@ -739,6 +748,7 @@ form#form-contacto {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
 }
+
 
 /* ========== RESPONSIVE ========== */
 
