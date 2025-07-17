@@ -99,7 +99,7 @@ btnEmail.addEventListener("click", (e) => {
   const { nombre, telefono, servicio, mensaje } = datos;
 
   const asunto = `Solicitud: ${servicio}`;
-  const cuerpo = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio}.\n\n${mensaje}` +
+  const cuerpo = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio}` +
                  (telefono ? `\n\nMi teléfono es: ${telefono}` : "");
 
   const mailtoLink = `mailto:serviciosesecspa@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
