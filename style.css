@@ -1041,3 +1041,39 @@ form#form-contacto {
     right: 10px;
   }
 }
+
+/* DEV- WATERMARK */
+ .dev-watermark-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.6;
+  pointer-events: all;
+}
+
+.dev-watermark-content {
+  max-width: 100%;
+  width: 100%;
+}
+
+.dev-watermark-content p {
+  color: #fff;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+body.blocked {
+  overflow: hidden;
+  height: 100vh;
+} 
