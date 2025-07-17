@@ -637,10 +637,12 @@ h1 {
 }
 
 .contact-grid {
-  display:flex;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   align-items: start;
   justify-content: center; /* <-- ayuda a centrar */
-  min-width: 60%;
+  max-width: 100%;
 }
 
 form#form-contacto{
@@ -648,11 +650,13 @@ form#form-contacto{
 }
 
 form#form-contacto {
-  min-width:100%;
-  background-color: var(--color-blanco);
+ background-color: var(--color-blanco);
   padding: 2rem;
   border-radius: 14px;
   box-shadow: var(--sombra);
+  max-width: 600px;        /* Tamaño ideal para escritorio */
+  margin: 0 auto;          /* Centrar el formulario */
+  width: 100%;  
 }
 
 .section-title-small {
@@ -938,7 +942,6 @@ form#form-contacto {
 [data-theme="dark"] .cta-overlay {
   background: rgba(0, 0, 0, 0.268);
 }
-
 
 [data-theme="dark"] .footer {
   background-color: #101a2c;
