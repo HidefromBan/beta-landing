@@ -1043,7 +1043,7 @@ form#form-contacto {
 }
 
 /* DEV- WATERMARK */
- .dev-watermark-overlay {
+ /* .dev-watermark-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.95);
@@ -1077,3 +1077,4 @@ body.blocked {
   overflow: hidden;
   height: 100vh;
 } 
+ */
