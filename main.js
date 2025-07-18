@@ -80,8 +80,7 @@ btnWhatsapp.addEventListener("click", () => {
 
   const { nombre, telefono, servicio, mensaje } = datos;
 
-  const texto = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio},  ${mensaje}` +
-                (telefono ? ` Mi teléfono es: ${telefono}` : "");
+  const texto = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio},  ${mensaje}`;
 
   const numero = "56974188951"; // número de WhatsApp sin "+"
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
@@ -99,7 +98,7 @@ btnEmail.addEventListener("click", (e) => {
   const { nombre, telefono, servicio, mensaje } = datos;
 
   const asunto = `Solicitud: ${servicio}`;
-  const cuerpo = `Hola, mi nombre es ${nombre}. Tengo una propuesta sobre: ${servicio}` +
+  const cuerpo = `Hola, mi nombre es ${nombre}, ${mensaje}` +
                  (telefono ? `\n\nMi teléfono es: ${telefono}` : "");
 
   const mailtoLink = `mailto:serviciosesecspa@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
