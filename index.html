@@ -53,6 +53,7 @@
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#galeria">Galeria</a>
         <a href="#contacto">Contacto</a>
       </nav>
       
@@ -81,6 +82,7 @@
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <div class="drawer-darkmode">
           <button id="drawerDarkModeToggle" class="dark-mode-btn" aria-label="Modo oscuro">
@@ -222,6 +224,8 @@
   </div>
 </section>
 
+
+
 <!-- CTA -->
     <section class="cta-section">
         <div class="cta-overlay"></div>
@@ -230,6 +234,60 @@
         <a href="#contacto" class="btn btn-secondary">Conversemos</a>
         </div>
     </section>
+
+
+    <!-- GALERÍA SLIDESHOW -->
+<section id="galeria" class="galeria-section">
+  <div class="container">
+    <h2 class="section-title">Galería de Trabajos</h2>
+    <div class="slideshow-wrapper">
+
+      <div class="slideshow-track">
+        <div class="slide active">
+          <img src="./img/2.webp" alt="Proyecto 2" loading="lazy" />
+          <div class="slide-caption">Fabricación de estructura para ventiladores de aire</div>
+        </div>
+        <div class="slide">
+          <img src="./img/3.webp" alt="Proyecto 3" loading="lazy" />
+          <div class="slide-caption">Modificación de altura portón para entrada camiones</div>
+        </div>
+      
+        <div class="slide">
+          <img src="./img/4.webp" alt="Proyecto 4" loading="lazy" />
+          <div class="slide-caption">Refuerzo de gomas en portones</div>
+        </div>
+        <div class="slide">
+          <img src="./img/6.webp" alt="Proyecto 6" loading="lazy" />
+          <div class="slide-caption">Trabajo de pintura a locales</div>
+        </div>
+        <div class="slide">
+          <img src="./img/5.webp" alt="Proyecto 5" loading="lazy" />
+          <div class="slide-caption">Implementación sistema de tuneles para mosca de la fruta</div>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <button class="slide-btn slide-prev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slide-btn slide-next" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Dots -->
+      <div class="slideshow-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- CONTACTO -->
   <section id="contacto" class="contact">
